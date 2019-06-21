@@ -1,14 +1,19 @@
 .wrapper {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
 select, input {
     @media (max-width: 576px) {
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
 }
 
 .info {
     padding-top: 20px;
+}
+
+.alert {
+    text-align: center;
+    margin: 24px auto 0;
 }

@@ -1,14 +1,17 @@
 <section class="container">
-    <div class="row wrapper">
-      <select class="col-12 col-sm-2 form-control" (change)="onChange($event.target.value)">
-        <option value="" disabled>Select</option>
-        <option value="_id">ID</option>
-        <option value="birthdate">Birthdate</option>
-        <option value="name">Name</option>
-        <!-- As Api is not supporting this i am commenting this -->
-        <!-- <option value="telecom">Telecom</option> -->
-      </select>
-      <input type="text" class="col-12 col-sm-8 form-control" name="LastName" placeholder="Please enter">
-      <button class="col-12 col-sm-2 btn btn-secondary" (click)="apiCall()">Search</button>
-    </div>
-  </section>
+  <form class="row wrapper" [formGroup]="patientIDSelectForm">
+    <select class="col-12 col-sm-2 form-control" (change)="onChange($event.target.value)">
+      <option value="" disabled>Select</option>
+      <option value="_id">ID</option>
+      <option value="birthdate">Birthdate</option>
+      <option value="name">Name</option>
+      <!-- As Api is not supporting this i am commenting this -->
+      <!-- <option value="telecom">Telecom</option> -->
+    </select>
+    <input type="text" class="col-12 col-sm-8 form-control" name="LastName" formControlName="inputValue"
+      placeholder="Please enter">
+    <button class="col-12 col-sm-2 btn btn-secondary" (click)="apiCall()">Search</button>
+    <span class="alert alert-danger" *ngIf="infoText">{{ infoText }}</span>
+  </form>
+  <app-patient-info *ngIf="patientList" [patientList]="patientList"></app-patient-info>
+</section>

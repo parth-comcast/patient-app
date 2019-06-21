@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing';
+import { PatientInfoComponent } from 'src/app/patient-info/patient-info';
 
 import { DataService } from './core/data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    PatientInfoComponent
   ],
   imports: [
     BrowserModule,

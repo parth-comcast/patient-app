@@ -1,0 +1,21 @@
+<section *ngIf="patientData">
+    <h2>Information of Patient</h2>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">DOB</th>
+                <th scope="col">DETAILS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patientData">
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.gender }}</td>
+                <td>{{ patient.dob }}</td>
+                <td><a class="badge badge-secondary" [routerLink]="['/patientCondition', patient.id]">View more</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
