@@ -4,19 +4,21 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
-import { AppComponent } from './app.component';
-import { LandingComponent } from './landing/landing';
+import { AppComponent } from 'src/app/app.component';
+import { LandingComponent } from 'src/app/landing/landing';
 import { PatientInfoComponent } from 'src/app/patient-info/patient-info';
+import { PatientConditionComponent } from 'src/app/patient-condition/patient-condition';
 
-import { DataService } from './core/data.service';
+import { DataService } from 'src/app/core/data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    PatientInfoComponent
+    PatientInfoComponent,
+    PatientConditionComponent
   ],
   imports: [
     BrowserModule,

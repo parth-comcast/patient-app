@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -11,6 +11,18 @@ export class DataService {
     constructor(private http: HttpClient) { }
 
     public getPatientList(params: string): Observable<any> {
-        return this.http.get<any>(this.url + `Patient?${params}`);
+        return this.http.get<any>(this.url + `Patient?${params}`, {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        });
+    }
+
+    public getPatientCondition(params: string): Observable<any> {
+        return this.http.get<any>(this.url + `Condition?patient=${params}`, {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        });
     }
 }

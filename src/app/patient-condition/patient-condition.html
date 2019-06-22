@@ -1,0 +1,30 @@
+<section *ngIf="patientConditions" class="container">
+    <div class="row align-items-center">
+        <h2 class="col-12">Patient's Active Condition</h2>
+    </div>
+    <div class="row">
+        <h3 *ngIf="patientName" class="col-12 col-md-10 offset-md-1 patient-name">Name: {{ patientName }}</h3>
+    </div>
+    <div class="row">
+        <table class="table col-12 col-md-10 offset-md-1">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Condition Name</th>
+                    <th scope="col" (click)="sortByDate()">Case Created <span class="badge badge-secondary">{{ isSortByDate ? 'Reset' : 'Sort' }}</span></th>
+                    <th scope="col">More Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let condition of patientConditions">
+                    <td>{{ condition.resource.code.text }}</td>
+                    <td>{{ condition.resource.dateRecorded }}</td>
+                    <td><a class="badge badge-secondary" href='https://www.ncbi.nlm.nih.gov/pubmed/?term={{condition.resource.code.text}}' target="_blank">View more</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section *ngIf="!patientConditions">
+    <h1>Hang tight. We are getting data!!!!!</h1>
+</section>
