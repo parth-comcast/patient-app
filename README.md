@@ -2,6 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
+## Requirement
+Angular CLI: 8.0.3
+Node: 10.16.0
+Angular: 8.0.2
+
+##Notes:
+
+Please follow happy path with this, as i saw so many data mismatch in the sandbox API.
+Select ID from the dropdown of the landing screen then enter 4342009
+As this account has good enough data to see all the scenario.
+
+-Thanks
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
